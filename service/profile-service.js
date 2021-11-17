@@ -5,9 +5,8 @@ module.exports = (app) => {
     app.get('/api/profile', getCurrentProfile);
 
     const updateCurrentProfile = (req, res) => {
-        console.log("req.body" + req.body);
-        console.log("JSON req.body- " + JSON.stringify(req.body));
-        console.log("JSON req.body.name - " + req.body.nameNew);
+        //console.log("JSON req.body- " + JSON.stringify(req.body));
+        //console.log("JSON req.body.name - " + req.body.nameNew);
         profile = {
             ...profile,
             name: req.body.nameNew,
@@ -16,7 +15,7 @@ module.exports = (app) => {
             website: req.body.websiteNew,
             dateOfBirth: req.body.dobNew
         }
-        console.log("New profile- " + JSON.stringify(profile));
+        //console.log("New profile- " + JSON.stringify(profile));
         res.json(profile);
     }
     app.put('/api/profile', updateCurrentProfile);
