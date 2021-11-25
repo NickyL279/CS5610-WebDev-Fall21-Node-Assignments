@@ -21,12 +21,15 @@ app.get('/hello', (req, res) => {
     res.send('Hello World! a8');
 });
 
+//a8
 require('./service/movies-service')(app);
-
-require('./service/tweeter-service')(app);
-
-require('./service/profile-service')(app);
-
+//require('./service/tweeter-service')(app);
+//require('./service/profile-service')(app);
 require('./movies/service')(app);
+
+//a9
+require('./db/tweets/tweeter-service')(app);
+require('./db/who/who-service')(app);
+require('./db/profile/profile-service')(app);
 
 app.listen(process.env.PORT || 4000);
